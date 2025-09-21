@@ -1,1 +1,56 @@
+/* Flexbox layout for body - column direction */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+}
+
+/* Flexbox layout for main - row direction */
+main {
+    display: flex;
+    flex-direction: row;
+    flex: auto; /* Takes automatic height and width */
+}
+
+/* Article takes 2/3 of the width */
+article {
+    flex: 2;
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+    padding: 20px;
+}
+
+/* Aside takes 1/3 of the width */
+aside {
+    flex: 1;
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+    padding: 20px;
+}
+
+/* Optional: Add some basic styling for better visual separation */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto; /* Push footer to bottom */
+}
+
+/* Optional: Add some visual styling to distinguish sections */
+article {
+    background-color: #f8f9fa;
+    border-right: 2px solid #dee2e6;
+}
+
+aside {
+    background-color: #e9ecef;
+}
+
+
 
