@@ -73,3 +73,71 @@ aside {
         <!-- Footer content -->
     </footer>
 </body>
+
+
+/* Responsive design for smartphones and tablets */
+@media screen and (max-width: 768px) {
+    /* Switch main from row to column on smaller screens */
+    main {
+        flex-direction: column;
+    }
+    
+    /* Remove the right border on article when stacked */
+    article {
+        border-right: none;
+        border-bottom: 2px solid #dee2e6;
+    }
+    
+    /* Adjust padding for smaller screens */
+    article, aside {
+        padding: 15px;
+    }
+    
+    /* Adjust header and footer padding */
+    header, footer {
+        padding: 0.8rem;
+    }
+    
+    /* Adjust navigation for mobile */
+    nav ul {
+        text-align: center;
+    }
+    
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* Additional responsive adjustments for very small screens */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    article, aside {
+        padding: 10px;
+    }
+    
+    /* Adjust font sizes for better readability */
+    body {
+        font-size: 14px;
+    }
+    
+    h1, h2, h3 {
+        font-size: 1.2em;
+    }
+}
+
+/* Optional: Add hover effects for better mobile experience */
+@media (hover: hover) {
+    /* Only apply hover effects on devices that support hover */
+    a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+    
+    nav ul li a:hover {
+        background-color: #555;
+    }
+}
