@@ -3252,3 +3252,46 @@ body {
 .header ~ * {
     margin-top: 80px;
 }
+
+
+
+/* ===== Footer Styling ===== */
+footer {
+    background-color: #0a0a0a;        /* Dark background for contrast */
+    color: #ffffff;                   /* White text for readability */
+    padding: 40px 20px;                /* Space inside footer */
+    text-align: center;               /* Center all text & links */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+footer a {
+    color: #ffffff;                   /* Match text color */
+    text-decoration: none;            /* Remove underline */
+    margin: 0 10px;                    /* Space between links */
+    transition: color 0.3s ease;      /* Smooth hover effect */
+}
+
+footer a:hover {
+    color: #ff6f61;                   /* Accent color on hover */
+}
+
+footer .footer-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+footer .social-icons {
+    margin-top: 15px;
+}
+
+footer .social-icons a {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: 20px;                   /* Icon size */
+}
