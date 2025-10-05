@@ -1,1 +1,112 @@
-headphones
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headphones - Premium Sound Experience</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Add font links later -->
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <!-- Logo -->
+            <!-- Navigation links -->
+            <!-- Mobile menu button -->
+        </nav>
+    </header>
+
+    <!-- Main Content Sections -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- Hero content -->
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <!-- Features grid -->
+        </section>
+
+        <!-- Additional sections as per design -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Footer content -->
+    </footer>
+</body>
+</html>
+
+
+
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+/* Note: Spin Cycle OT might need local hosting */
+
+/* CSS Variables */
+:root {
+    --primary-color: #FF6565;
+    --max-width: 1000px;
+    --mobile-breakpoint: 480px;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.6;
+}
+
+/* Container for centering content */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+
+
+/* Mobile First Approach */
+/* Base mobile styles here */
+
+/* Desktop Styles */
+@media (min-width: 481px) {
+    /* Desktop specific styles */
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+    /* Mobile specific overrides */
+}
+
+
+
+
+/* Link Hover/Active States */
+a:hover,
+a:active {
+    color: #FF6565 !important;
+}
+
+/* Button Hover/Active States */
+button:hover,
+button:active,
+.btn:hover,
+.btn:active {
+    opacity: 0.9;
+}
+
+
+
+
+
+
