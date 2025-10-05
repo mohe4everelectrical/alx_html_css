@@ -1,0 +1,153 @@
+/* ===== CONTACT US SECTION ===== */
+.contact-us {
+    padding: var(--section-padding);
+    background-color: var(--background-light);
+    color: #071629;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 340px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #071629;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0 0 10px 0;
+    border: none;
+    border-bottom: 1px solid #071629;
+    background: transparent;
+    font-size: 16px;
+    font-family: var(--font-primary);
+    color: #071629;
+    transition: all 0.3s ease;
+    resize: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #071629;
+    opacity: 0.5;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-bottom-color: var(--primary-color);
+    padding-left: 10px;
+}
+
+.form-input:valid,
+.form-textarea:valid {
+    border-bottom-color: #4CAF50;
+}
+
+.form-input:invalid:not(:focus):not(:placeholder-shown),
+.form-textarea:invalid:not(:focus):not(:placeholder-shown) {
+    border-bottom-color: #f44336;
+}
+
+/* Error Message Styling */
+.error-message {
+    display: block;
+    font-size: 12px;
+    color: #f44336;
+    margin-top: 5px;
+    min-height: 18px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+}
+
+/* Form Button */
+.form-button {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+/* Form Validation States */
+.form-input.success {
+    border-bottom-color: #4CAF50;
+}
+
+.form-input.error {
+    border-bottom-color: #f44336;
+}
+
+/* Form Animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.form-input.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+/* ===== MOBILE STYLES FOR CONTACT FORM ===== */
+@media (max-width: 480px) {
+    .contact-us {
+        padding: 60px 0;
+    }
+    
+    .contact-form {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    .form-group {
+        margin-bottom: 30px;
+    }
+    
+    .form-label {
+        font-size: 12px;
+    }
+    
+    .form-input,
+    .form-textarea {
+        font-size: 14px;
+    }
+}
+
+/* ===== SUCCESS MESSAGE ===== */
+.form-success {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.form-success.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
