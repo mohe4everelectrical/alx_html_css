@@ -1,0 +1,159 @@
+/* ===== ICON FONT ===== */
+@font-face {
+    font-family: 'holberton_school-icon';
+    src:  url('icons/holberton_school-icon.eot?kqecks');
+    src:  url('icons/holberton_school-icon.eot?kqecks#iefix') format('embedded-opentype'),
+        url('icons/holberton_school-icon.ttf?kqecks') format('truetype'),
+        url('icons/holberton_school-icon.woff?kqecks') format('woff'),
+        url('icons/holberton_school-icon.svg?kqecks#holberton_school-icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="holberton_school-icon-"], [class*=" holberton_school-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'holberton_school-icon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.holberton_school-icon-ic_sound:before {
+    content: "\e90c";
+}
+.holberton_school-icon-ic_video:before {
+    content: "\e90f";
+}
+.holberton_school-icon-ic_music:before {
+    content: "\e90d";
+}
+.holberton_school-icon-ic_hearing:before {
+    content: "\e909";
+}
+
+/* ===== WHAT WE DO SECTION ===== */
+.what-we-do {
+    padding: var(--section-padding);
+    background-color: #FFFFFF;
+    color: #071629;
+    text-align: center;
+}
+
+.section-header {
+    max-width: 650px;
+    margin: 0 auto 80px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #071629;
+}
+
+.section-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #071629;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-icon {
+    width: 100px;
+    height: 100px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.service-icon:hover {
+    transform: scale(1.1);
+}
+
+.service-icon span {
+    font-size: 50px;
+    color: #FFFFFF;
+}
+
+.service-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #071629;
+}
+
+.service-description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #071629;
+    max-width: 250px;
+}
+
+/* ===== MOBILE STYLES FOR WHAT WE DO ===== */
+@media (max-width: 480px) {
+    .what-we-do {
+        padding: 60px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 50px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .section-description {
+        font-size: 14px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .service-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+    
+    .service-icon span {
+        font-size: 40px;
+    }
+    
+    .service-title {
+        font-size: 16px;
+    }
+    
+    .service-description {
+        font-size: 13px;
+    }
+}
