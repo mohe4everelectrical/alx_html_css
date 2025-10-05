@@ -57,3 +57,153 @@
             </form>
         </div>
     </section>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const messageError = document.getElementById('messageError');
+
+        // Real-time validation
+        nameInput.addEventListener('input', validateName);
+        emailInput.addEventListener('input', validateEmail);
+        messageInput.addEventListener('input', validateMessage);
+
+        // Form submission
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateForm()) {
+                // Simulate form submission
+                showSuccessMessage();
+                contactForm.reset();
+                clearValidation();
+            }
+        });
+
+        function validateName() {
+            const name = nameInput.value.trim();
+            
+            if (name.length < 2) {
+                showError(nameInput, nameError, 'Name must be at least 2 characters long');
+                return false;
+            } else if (name.length > 50) {
+                showError(nameInput, nameError, 'Name must be less than 50 characters');
+                return false;
+            } else if (!/^[a-zA-Z\s]+$/.test(name)) {
+                showError(nameInput, nameError, 'Name can only contain letters and spaces');
+                return false;
+            } else {
+                showSuccess(nameInput, nameError);
+                return true;
+            }
+        }
+
+        function validateEmail() {
+            const email = emailInput.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!email) {
+                showError(emailInput, emailError, 'Email is required');
+                return false;
+            } else if (!emailRegex.test(email)) {
+                showError(emailInput, emailError, 'Please enter a valid email address');
+                return false;
+            } else {
+                showSuccess(emailInput, emailError);
+                return true;
+            }
+        }
+
+        function validateMessage() {
+            const message = messageInput.value.trim();
+            
+            if (message.length < 10) {
+                showError(messageInput, messageError, 'Message must be at least 10 characters long');
+                return false;
+            } else if (message.length > 500) {
+                showError(messageInput, messageError, 'Message must be less than 500 characters');
+                return false;
+            } else {
+                showSuccess(messageInput, messageError);
+                return true;
+            }
+        }
+
+        function validateForm() {
+            const isNameValid = validateName();
+            const isEmailValid = validateEmail();
+            const isMessageValid = validateMessage();
+            
+            return isNameValid && isEmailValid && isMessageValid;
+        }
+
+        function showError(input, errorElement, message) {
+            input.classList.add('error', 'shake');
+            input.classList.remove('success');
+            errorElement.textContent = message;
+            errorElement.classList.add('show');
+            
+            // Remove shake animation after it completes
+            setTimeout(() => {
+                input.classList.remove('shake');
+            }, 300);
+        }
+
+        function showSuccess(input, errorElement) {
+            input.classList.add('success');
+            input.classList.remove('error');
+            errorElement.classList.remove('show');
+        }
+
+        function clearValidation() {
+            [nameInput, emailInput, messageInput].forEach(input => {
+                input.classList.remove('success', 'error');
+            });
+            [nameError, emailError, messageError].forEach(error => {
+                error.classList.remove('show');
+            });
+        }
+
+        function showSuccessMessage() {
+            // Create success message element if it doesn't exist
+            let successMessage = document.querySelector('.form-success');
+            if (!successMessage) {
+                successMessage = document.createElement('div');
+                successMessage.className = 'form-success';
+                successMessage.innerHTML = `
+                    <h3>Thank You!</h3>
+                    <p>Your message has been sent successfully. We'll get back to you soon.</p>
+                `;
+                contactForm.parentNode.insertBefore(successMessage, contactForm.nextSibling);
+            }
+            
+            successMessage.classList.add('show');
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+        }
+
+        // Add input animations
+        const formInputs = document.querySelectorAll('.form-input, .form-textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+        });
+    });
+</script>
