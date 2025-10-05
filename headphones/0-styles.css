@@ -1,0 +1,280 @@
+/* ===== CSS RESET ===== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== CSS VARIABLES ===== */
+:root {
+    /* Colors */
+    --primary-color: #FF6565;
+    --text-color: #FFFFFF;
+    --background-dark: #071629;
+    
+    /* Typography */
+    --font-primary: 'Source Sans Pro', sans-serif;
+    
+    /* Layout */
+    --max-width: 1000px;
+    --mobile-breakpoint: 480px;
+    
+    /* Spacing */
+    --section-padding: 100px 0;
+    --container-padding: 0 20px;
+}
+
+/* ===== BASE STYLES ===== */
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--container-padding);
+}
+
+/* ===== HEADER STYLES ===== */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    display: block;
+}
+
+/* Desktop Navigation */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: 12px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    color: var(--primary-color) !important;
+}
+
+/* Mobile Menu Button (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: 0.3s;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    background: 
+        linear-gradient(rgba(7, 22, 41, 0.9), rgba(7, 22, 41, 0.9)),
+        url('images/headphones_hero_1.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: var(--section-padding);
+    position: relative;
+}
+
+.hero-content {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    margin-bottom: 60px;
+}
+
+.cta-button:hover,
+.cta-button:active {
+    opacity: 0.9;
+}
+
+.hero-description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== MOBILE STYLES ===== */
+@media (max-width: 480px) {
+    /* Container adjustment for mobile */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Header Mobile Styles */
+    .header {
+        padding: 15px 0;
+    }
+    
+    /* Hide desktop navigation on mobile */
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        flex-direction: column;
+        background-color: var(--background-dark);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        gap: 0;
+        padding: 20px 0;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-item {
+        margin: 15px 0;
+    }
+    
+    .nav-link {
+        font-size: 18px;
+        display: block;
+        padding: 10px;
+    }
+    
+    /* Show hamburger menu on mobile */
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Hamburger animation */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+    
+    /* Hero Mobile Adjustments */
+    .hero {
+        min-height: 100vh;
+        padding: 80px 0 40px;
+    }
+    
+    .hero-title {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 12px;
+        margin-bottom: 40px;
+    }
+    
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* ===== DESKTOP ENHANCEMENTS ===== */
+@media (min-width: 481px) {
+    .hero-title {
+        font-size: 40px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    .cta-button {
+        padding: 18px 35px;
+        font-size: 16px;
+    }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for accessibility */
+.nav-link:focus,
+.cta-button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
