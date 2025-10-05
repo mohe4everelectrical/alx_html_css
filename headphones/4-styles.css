@@ -1,0 +1,194 @@
+/* ===== FOOTER SECTION ===== */
+.footer {
+    background-color: var(--background-dark);
+    padding: 80px 0 60px;
+    color: var(--text-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer-logo img {
+    display: block;
+    filter: brightness(0) invert(1); /* Makes logo white */
+}
+
+.copyright {
+    font-size: 12px;
+    opacity: 0.5;
+    margin: 0;
+}
+
+/* Social Media Links */
+.footer-social {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-link span {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover,
+.social-link:active {
+    color: var(--primary-color);
+}
+
+.social-link:hover span {
+    transform: scale(1.2);
+}
+
+/* Social Media Icon Font Definitions */
+/* Add these to your existing icon font styles */
+.holberton_school-icon-ic_facebook:before {
+    content: "\e908";
+}
+.holberton_school-icon-ic_twitter:before {
+    content: "\e90e";
+}
+.holberton_school-icon-ic_instagram:before {
+    content: "\e90a";
+}
+
+/* ===== MOBILE STYLES FOR FOOTER ===== */
+@media (max-width: 480px) {
+    .footer {
+        padding: 60px 0 40px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .footer-brand {
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .footer-logo img {
+        width: 140px;
+        height: auto;
+    }
+    
+    .copyright {
+        font-size: 11px;
+    }
+    
+    .footer-social {
+        gap: 15px;
+    }
+    
+    .social-link {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .social-link span {
+        font-size: 18px;
+    }
+}
+
+/* ===== ENHANCED FOOTER STYLING ===== */
+/* Add subtle animation for page load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Social media tooltip (optional enhancement) */
+.social-link::after {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.social-link:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: -35px;
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+.social-link:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .social-link {
+        border: 1px solid var(--text-color);
+    }
+    
+    .social-link:hover,
+    .social-link:active {
+        border-color: var(--primary-color);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .footer {
+        animation: none;
+    }
+    
+    .social-link span,
+    .social-link::after {
+        transition: none;
+    }
+}
+
+
+
+
